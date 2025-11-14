@@ -97,7 +97,8 @@ export default function Sidebar({ counts, profile }: SidebarProps) {
           <Link href="/">
               <Image
                   src="/LOGO BARU ORANGE.svg"
-                  alt="Timeless Type Logo"
+                  // --- PERUBAHAN NAMA PERUSAHAAN DI SINI ---
+                  alt="Letterena Studios Logo"
                   width={160}
                   height={32}
                   priority

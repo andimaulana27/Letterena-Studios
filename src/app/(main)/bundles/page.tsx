@@ -32,13 +32,17 @@ export async function generateMetadata({ searchParams }: { searchParams: { [key:
   if (tag) {
     const capitalizedTag = tag.charAt(0).toUpperCase() + tag.slice(1);
     return {
-      title: `Font Bundles Tagged with "${capitalizedTag}" | Stylish Type`,
+      // --- PERUBAHAN DI SINI ---
+      title: `Font Bundles Tagged with "${capitalizedTag}" | Letterena Studios`,
+      // --- AKHIR PERUBAHAN ---
       description: `Discover curated font bundles tagged with "${capitalizedTag}". Get premium typefaces at an incredible value.`,
     };
   }
   
   return {
-    title: 'Unlock Value with Font Bundles | Stylish Type',
+    // --- PERUBAHAN DI SINI ---
+    title: 'Unlock Value with Font Bundles | Letterena Studios',
+    // --- AKHIR PERUBAHAN ---
     description: 'Discover affordable font bundles featuring top-selling typefaces. Save big while building a professional font library for logos, branding, and creative projects.',
   };
 }
@@ -190,7 +194,9 @@ export default async function AllBundlesPage({
             <div className="container mx-auto px-6">
                 <SectionHeader
                     title="Our Staff Picks"
-                    subtitle="Check out some of our favorite fonts, curated by the Stylish Type team."
+                    // --- PERUBAHAN DI SINI ---
+                    subtitle="Check out some of our favorite fonts, curated by the Letterena Studios team."
+                    // --- AKHIR PERUBAHAN ---
                 />
             </div>
             <MarqueeRow products={marqueeFonts} animationClass="animate-marquee-reverse-fast" />

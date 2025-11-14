@@ -20,10 +20,10 @@ export default async function MainLayout({
 
   const cookieStore = cookies();
   
-  // --- PERBAIKAN DI SINI ---
-  // Nama cookie disesuaikan menjadi 'stylishtype_cookie_consent'
-  const consentCookie = cookieStore.get('stylishtype_cookie_consent');
-  // --- AKHIR PERBAIKAN ---
+  // --- PERUBAHAN DI SINI ---
+  // Nama cookie disesuaikan menjadi 'letterena_cookie_consent'
+  const consentCookie = cookieStore.get('letterena_cookie_consent');
+  // --- AKHIR PERUBAHAN ---
   
   const hasConsent = consentCookie?.value === 'accepted';
 

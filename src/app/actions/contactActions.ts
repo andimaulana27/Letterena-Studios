@@ -44,8 +44,10 @@ export async function sendContactEmailAction(prevState: State, formData: FormDat
 
   try {
     const { error } = await resend.emails.send({
-      from: 'Contact Form <support@stylishtype.co>',
-      to: ['support@stylishtype.co'],
+      // --- PERUBAHAN DI SINI ---
+      from: 'Contact Form <support@letterena.com>',
+      to: ['support@letterena.com'],
+      // --- AKHIR PERUBAHAN ---
       replyTo: email,
       subject: `[Contact Form] - ${subject}`,
       react: ContactFormEmail({

@@ -1,4 +1,4 @@
-// src/app/privacy/page.tsx
+// src/app/(main)/privacy/page.tsx
 import type { Metadata } from 'next';
 import BackToTopButton from "@/components/BackToTopButton";
 import SectionHeader from '@/components/SectionHeader';
@@ -10,8 +10,10 @@ import { cookies } from 'next/headers';
 import { Database } from '@/lib/database.types';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Stylish Type',
-  description: 'Read the Privacy Policy for using the Stylish Type website and its materials.',
+  // --- PERUBAHAN DI SINI ---
+  title: 'Privacy Policy | Letterena Studios',
+  description: 'Read the Privacy Policy for using the Letterena Studios website and its materials.',
+  // --- AKHIR PERUBAHAN ---
 };
 
 export const revalidate = 86400; // Revalidate setiap 24 jam

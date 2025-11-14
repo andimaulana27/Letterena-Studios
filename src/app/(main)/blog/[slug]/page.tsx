@@ -37,32 +37,36 @@ export async function generateMetadata(
         '@type': 'BlogPosting',
         headline: post.title,
         name: post.title,
-        description: post.excerpt || 'Read this article on Stylish Type Blog.',
+        // --- PERUBAHAN DI SINI ---
+        description: post.excerpt || 'Read this article on Letterena Studios Blog.',
         image: postImage,
         datePublished: new Date(post.created_at).toISOString(),
         dateModified: new Date(post.updated_at).toISOString(),
         author: {
           '@type': 'Person',
-          name: post.author_name || 'Stylish Type',
+          name: post.author_name || 'Letterena Studios',
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Stylish Type',
+          name: 'Letterena Studios',
           logo: {
             '@type': 'ImageObject',
-            url: `${process.env.NEXT_PUBLIC_SITE_URL}/logo-stylishtype-footer.png`,
+            url: `${process.env.NEXT_PUBLIC_SITE_URL}/logo-letterena-studios-footer.png`,
           },
         },
+        // --- AKHIR PERUBAHAN ---
         url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${slug}`,
     };
     
     return {
       title: post.title,
-      description: post.excerpt || 'Read this article on Stylish Type Blog.',
+      // --- PERUBAHAN DI SINI ---
+      description: post.excerpt || 'Read this article on Letterena Studios Blog.',
       keywords: post.tags || [],
       alternates: { canonical: `/blog/${slug}` },
       openGraph: {
-        title: `${post.title} | Stylish Type Blog`,
+        title: `${post.title} | Letterena Studios Blog`,
+      // --- AKHIR PERUBAHAN ---
         description: post.excerpt || '',
         images: [postImage, ...previousImages],
         url: `/blog/${slug}`,
@@ -70,7 +74,9 @@ export async function generateMetadata(
       },
       twitter: {
         card: 'summary_large_image',
-        title: `${post.title} | Stylish Type Blog`,
+        // --- PERUBAHAN DI SINI ---
+        title: `${post.title} | Letterena Studios Blog`,
+        // --- AKHIR PERUBAHAN ---
         description: post.excerpt || '',
         images: [postImage],
       },

@@ -257,7 +257,8 @@ export const OrderConfirmationEmail: React.FC<OrderConfirmationEmailProps> = ({
               {/* === FOOTER === */}
               <div style={footerStyle}>
                   <p>Your Invoice and End User License Agreement (EULA) are attached for your records.</p>
-                  © {new Date().getFullYear()} Stylishtype.co. All Rights Reserved.
+                  {/* --- PERUBAHAN NAMA PERUSAHAAN DI SINI --- */}
+                  © {new Date().getFullYear()} Letterena Studios. All Rights Reserved.
               </div>
             </td>
           </tr>

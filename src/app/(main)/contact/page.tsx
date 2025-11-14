@@ -13,7 +13,9 @@ import { getAllFontsForMarqueeAction } from '@/app/actions/productActions';
 const BlogCarousel = dynamic(() => import('@/components/blog/BlogCarousel'));
 
 export const metadata: Metadata = {
-  title: 'Contact | Stylish Type',
+  // --- PERUBAHAN DI SINI ---
+  title: 'Contact | Letterena Studios',
+  // --- AKHIR PERUBAHAN ---
   description: 'Reach out and let’s create something timeless together.',
 };
 
@@ -59,7 +61,9 @@ export default async function ContactPage() {
             <div className="container mx-auto px-6">
                 <SectionHeader
                     title="Our Staff Picks"
-                    subtitle="Check out some of our favorite fonts, curated by the Stylish Type team."
+                    // --- PERUBAHAN DI SINI ---
+                    subtitle="Check out some of our favorite fonts, curated by the Letterena Studios team."
+                    // --- AKHIR PERUBAHAN ---
                 />
             </div>
             <MarqueeRow products={marqueeFonts} animationClass="animate-marquee-reverse-fast" />

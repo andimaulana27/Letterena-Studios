@@ -53,7 +53,8 @@ export async function GET(request: NextRequest) {
             query = query.eq('partner_id', partnerId);
         } else if (partnerSlug) {
             // --- PERUBAHAN DI SINI ---
-            if (partnerSlug === 'stylishtype') {
+            if (partnerSlug === 'letterena-studios') {
+            // --- AKHIR PERUBAHAN ---
                 query = query.is('partner_id', null);
             }
         }

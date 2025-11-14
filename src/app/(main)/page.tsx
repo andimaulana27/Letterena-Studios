@@ -53,7 +53,9 @@ const FontInUseSection = ({ galleryImages }: { galleryImages: any[] }) => {
                 </div>
                 <FontInUseClient galleryImages={galleryImages} />
                 <div className="text-center mt-16">
-                    <Button href="https://www.instagram.com/stylishtype.co" target="_blank" rel="noopener noreferrer">
+                    {/* --- PERUBAHAN DI SINI --- */}
+                    <Button href="https://www.instagram.com/letterena.com" target="_blank" rel="noopener noreferrer">
+                    {/* --- AKHIR PERUBAHAN --- */}
                         View All Gallery
                     </Button>
                 </div>

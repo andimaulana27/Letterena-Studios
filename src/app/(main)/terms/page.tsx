@@ -9,8 +9,10 @@ import { cookies } from 'next/headers';
 import { Database } from '@/lib/database.types';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Stylish Type',
-  description: 'Read the Terms of Service for using the Stylish Type website and its materials.',
+  // --- PERUBAHAN DI SINI ---
+  title: 'Terms of Service | Letterena Studios',
+  description: 'Read the Terms of Service for using the Letterena Studios website and its materials.',
+  // --- AKHIR PERUBAHAN ---
 };
 
 export const revalidate = 86400;

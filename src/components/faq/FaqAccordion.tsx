@@ -66,7 +66,8 @@ const faqData: FaqItem[] = [
     },
     {
         question: 'What is your refund policy?',
-        answer: 'We do not offer refunds on digital downloads, including fonts, unless there is a technical issue with the font that prevents it from working properly. If you experience any issues with your purchase, please contact our customer support team for assistance or email us at support@timelesstype.com.',
+        // --- PERUBAHAN NAMA PERUSAHAAN/EMAIL ---
+        answer: 'We do not offer refunds on digital downloads, including fonts, unless there is a technical issue with the font that prevents it from working properly. If you experience any issues with your purchase, please contact our customer support team for assistance or email us at support@letterenastudios.com.',
     },
     {
         question: 'Can I modify your fonts for my own use?',

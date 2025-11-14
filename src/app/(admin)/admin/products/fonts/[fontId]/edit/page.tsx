@@ -13,19 +13,15 @@ import { Listbox, Transition } from '@headlessui/react';
 import { useRouter } from 'next/navigation';
 import GalleryImageUploader from '@/components/admin/GalleryImageUploader';
 import { createBrowserClient } from '@supabase/ssr';
-// --- PERUBAHAN DI SINI ---
 import FontZipUploader from '@/components/admin/FontZipUploader';
 import JSZip from 'jszip';
 import opentype from 'opentype.js';
-// --- AKHIR PERUBAHAN ---
 
 type Font = Tables<'fonts'>;
 type Partner = { id: string; name: string };
 const categories = ["Serif Display", "Sans Serif", "Slab Serif", "Groovy", "Script", "Blackletter", "Western", "Sport", "Sci-Fi"];
 
-// --- PERUBAHAN DI SINI ---
 type PreviewFont = { name: string; styleName: string; fontFamily: string; url: string; };
-// --- AKHIR PERUBAHAN ---
 
 const EditFontForm = ({ font }: { font: Font }) => {
   const router = useRouter();
@@ -44,7 +40,6 @@ const EditFontForm = ({ font }: { font: Font }) => {
   const [partners, setPartners] = useState<Partner[]>([]);
   const [selectedPartner, setSelectedPartner] = useState<Partner | null>(null);
 
-  // --- STATE BARU UNTUK ZIP UPLOAD & PREVIEW ---
   const [isZipUploading, setIsZipUploading] = useState(false);
   const [uploadResult, setUploadResult] = useState<{ downloadableFileUrl: string } | null>(null);
   const [newGlyphsJson, setNewGlyphsJson] = useState<string[]>([]);
@@ -52,7 +47,6 @@ const EditFontForm = ({ font }: { font: Font }) => {
   const [newPreviewFonts, setNewPreviewFonts] = useState<PreviewFont[]>([]);
   const [newDynamicStyles, setNewDynamicStyles] = useState<string>('');
   const [livePreviewText, setLivePreviewText] = useState('The quick brown fox jumps over the lazy dog');
-  // --- AKHIR STATE BARU ---
 
   useEffect(() => {
     const fetchPartners = async () => {
@@ -73,12 +67,10 @@ const EditFontForm = ({ font }: { font: Font }) => {
     setSlug(generatedSlug);
   }, [fontName]);
   
-  // --- EFEK BARU UNTUK CLEANUP OBJECT URL ---
   useEffect(() => {
       const urlsToClean = newPreviewFonts.map(font => font.url);
       return () => { urlsToClean.forEach(url => URL.revokeObjectURL(url)); };
   }, [newPreviewFonts]);
-  // --- AKHIR EFEK BARU ---
 
   const addTags = (tagString: string) => {
     const newTags = tagString.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0 && !tags.includes(tag));
@@ -107,7 +99,6 @@ const EditFontForm = ({ font }: { font: Font }) => {
       setIsGalleryUploading(isUploading);
   }, []);
 
-  // --- FUNGSI BARU DARI new/page.tsx ---
   const getFontStyle = (fileName: string): string => {
       const nameWithoutExt = fileName.replace(/\.[^/.]+$/, "");
       const nameParts = nameWithoutExt.split(/[-_ ]+/);
@@ -194,13 +185,11 @@ const EditFontForm = ({ font }: { font: Font }) => {
       setUploadResult(result);
       setIsZipUploading(isUploading);
       if (!isUploading && !result) {
-          // Upload dibatalkan, bersihkan preview
           setNewPreviewFonts([]);
           setNewDynamicStyles('');
           setNewGlyphsJson([]);
       }
   }, []);
-  // --- AKHIR FUNGSI BARU ---
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -219,17 +208,12 @@ const EditFontForm = ({ font }: { font: Font }) => {
     formData.set('slug', slug);
     galleryImageUrls.forEach(url => formData.append('preview_image_urls', url));
     
-    // --- PERUBAHAN DI SINI: Tambahkan data ZIP baru dan lama ---
     if (uploadResult) {
-        // Kirim data baru
         formData.append('downloadable_file_url', uploadResult.downloadableFileUrl);
         formData.append('glyphs_json', JSON.stringify(newGlyphsJson));
-        
-        // Kirim data lama untuk dihapus oleh action
         formData.append('existing_download_zip_path', font.download_zip_path || '');
         formData.append('existing_font_files_json', JSON.stringify(font.font_files || []));
     }
-    // --- AKHIR PERUBAHAN ---
 
     startTransition(async () => {
       const result = await updateFontAction(font.id, formData);
@@ -241,7 +225,7 @@ const EditFontForm = ({ font }: { font: Font }) => {
     });
   };
   
-  const isUploading = isGalleryUploading || isZipUploading; // Variabel helper
+  const isUploading = isGalleryUploading || isZipUploading;
   const inputStyles = "w-full bg-white/5 border border-transparent rounded-full px-4 py-3 text-brand-light placeholder:text-brand-light-muted transition-colors duration-300 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent hover:border-brand-accent/50";
   const labelStyles = "block text-sm font-medium text-brand-light-muted mb-2 group-hover:text-brand-accent transition-colors";
 
@@ -276,7 +260,11 @@ const EditFontForm = ({ font }: { font: Font }) => {
           </div>
           <div className="space-y-2 group">
             <label htmlFor="partner" className={labelStyles}>Partner/Foundry</label>
-            <Listbox value={selectedPartner} onChange={setSelectedPartner}>{({ open }) => (<div className="relative"><Listbox.Button className={`${inputStyles} text-left flex justify-between items-center`}><span className={selectedPartner ? 'text-brand-light' : 'text-brand-light-muted'}>{selectedPartner?.name || 'Stylish Type (Default)'}</span><ChevronDown size={20} className={`transition-transform duration-200 ${open ? 'rotate-180 text-brand-accent' : 'text-brand-light-muted'}`} /></Listbox.Button><Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0"><Listbox.Options className="absolute z-10 mt-1 w-full bg-[#1e1e1e] shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black/5 overflow-auto focus:outline-none sm:text-sm"><Listbox.Option className={({ active }) => `cursor-pointer select-none relative py-2 pl-10 pr-4 ${active ? 'bg-brand-accent text-brand-darkest' : 'text-brand-light'}`} value={null}>{({ selected }) => ( <> <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>Stylish Type (Default)</span> {selected ? (<span className="absolute inset-y-0 left-0 flex items-center pl-3 text-brand-accent"><Check size={20} aria-hidden="true" /></span>) : null} </>)}</Listbox.Option>{partners.map((partner) => ( <Listbox.Option key={partner.id} className={({ active }) => `cursor-pointer select-none relative py-2 pl-10 pr-4 ${active ? 'bg-brand-accent text-brand-darkest' : 'text-brand-light'}`} value={partner}>{({ selected }) => ( <> <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>{partner.name}</span> {selected ? (<span className="absolute inset-y-0 left-0 flex items-center pl-3 text-brand-accent"><Check size={20} aria-hidden="true" /></span>) : null} </>)}</Listbox.Option>))}</Listbox.Options></Transition></div>)}</Listbox>
+            <Listbox value={selectedPartner} onChange={setSelectedPartner}>{({ open }) => (<div className="relative"><Listbox.Button className={`${inputStyles} text-left flex justify-between items-center`}><span className={selectedPartner ? 'text-brand-light' : 'text-brand-light-muted'}>{selectedPartner?.name || 'Letterena Studios (Default)'}</span><ChevronDown size={20} className={`transition-transform duration-200 ${open ? 'rotate-180 text-brand-accent' : 'text-brand-light-muted'}`} /></Listbox.Button><Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0"><Listbox.Options className="absolute z-10 mt-1 w-full bg-[#1e1e1e] shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black/5 overflow-auto focus:outline-none sm:text-sm">
+              {/* --- PERUBAHAN --- */}
+              <Listbox.Option className={({ active }) => `cursor-pointer select-none relative py-2 pl-10 pr-4 ${active ? 'bg-brand-accent text-brand-darkest' : 'text-brand-light'}`} value={null}>{({ selected }) => ( <> <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>Letterena Studios (Default)</span> {selected ? (<span className="absolute inset-y-0 left-0 flex items-center pl-3 text-brand-accent"><Check size={20} aria-hidden="true" /></span>) : null} </>)}</Listbox.Option>
+              {/* --- AKHIR PERUBAHAN --- */}
+              {partners.map((partner) => ( <Listbox.Option key={partner.id} className={({ active }) => `cursor-pointer select-none relative py-2 pl-10 pr-4 ${active ? 'bg-brand-accent text-brand-darkest' : 'text-brand-light'}`} value={partner}>{({ selected }) => ( <> <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>{partner.name}</span> {selected ? (<span className="absolute inset-y-0 left-0 flex items-center pl-3 text-brand-accent"><Check size={20} aria-hidden="true" /></span>) : null} </>)}</Listbox.Option>))}</Listbox.Options></Transition></div>)}</Listbox>
           </div>
         </div>
         <div className="space-y-2 group">
@@ -298,7 +286,6 @@ const EditFontForm = ({ font }: { font: Font }) => {
           <RichTextEditor value={mainDescription} onChange={setMainDescription} placeholder="A full description for the font detail page..."/>
         </div>
         
-        {/* --- PERUBAHAN DI SINI: Mengganti Peringatan dengan Uploader --- */}
         <div className="space-y-6 border-t border-white/10 pt-6">
           <FontZipUploader 
             label="Replace Font Assets (.zip)"
@@ -308,7 +295,6 @@ const EditFontForm = ({ font }: { font: Font }) => {
           <GalleryImageUploader initialUrls={font.preview_image_urls || []} onUploadChange={handleGalleryUploadChange} />
         </div>
         
-        {/* --- FUNGSI BARU: Pratinjau font yang baru di-scan --- */}
         {newPreviewFonts.length > 0 && (
             <div className="space-y-4 group border-t border-white/10 pt-6">
               <label className={labelStyles}>New Font Preview (Unsaved)</label>
@@ -325,7 +311,6 @@ const EditFontForm = ({ font }: { font: Font }) => {
               </div>
           </div>
         )}
-        {/* --- AKHIR FUNGSI BARU --- */}
 
         <div className="border-t border-white/10 pt-6 flex justify-end">
           <button type="submit" disabled={isPending || isUploading} className="px-6 py-2 bg-brand-accent text-brand-darkest font-semibold rounded-lg transition-all duration-300 ease-in-out hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2">

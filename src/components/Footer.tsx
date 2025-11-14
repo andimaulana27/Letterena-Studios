@@ -125,7 +125,7 @@ const Footer = () => {
             <div>
                <Link href="/" aria-label="Back to Homepage">
                  {/* --- PERUBAHAN LOGO FOOTER --- */}
-                 <span className="text-4xl font-bold text-brand-accent">stylishType.co</span>
+                 <span className="text-4xl font-bold text-brand-accent">Letterena Studios</span>
                </Link>
               <p className="mt-4 font-light text-sm max-w-xs">
                 Discover premium fonts that elevate your designs.
@@ -146,7 +146,8 @@ const Footer = () => {
                     <PaymentIcon IconComponent={MastercardIcon} />
                 </div>
                 <p className="text-xs text-brand-light-muted/50 mt-4">
-                    © {new Date().getFullYear()} <span className="text-brand-accent">Stylishtype.co</span>. All rights reserved.
+                    {/* --- PERUBAHAN NAMA PERUSAHAAN --- */}
+                    © {new Date().getFullYear()} <span className="text-brand-accent">Letterena Studios</span>. All rights reserved.
                 </p>
             </div>
           </div>

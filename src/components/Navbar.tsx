@@ -96,7 +96,7 @@ const Navbar = ({
               <div className="flex-shrink-0">
                 <Link href="/" aria-label="Back to Homepage" prefetch={true}>
                   {/* --- PERUBAHAN LOGO 1 (DESKTOP) --- */}
-                  <span className="text-3xl font-bold text-brand-accent">stylishType.co</span>
+                  <span className="text-3xl font-bold text-brand-accent">Letterena Studios</span>
                 </Link>
               </div>
               <div className="flex flex-grow items-center justify-center">
@@ -152,7 +152,7 @@ const Navbar = ({
               <div className="absolute left-1/2 -translate-x-1/2">
                 <Link href="/" aria-label="Back to Homepage">
                   {/* --- PERUBAHAN LOGO 2 (MOBILE HEADER) --- */}
-                  <span className="text-xl font-bold text-brand-accent">stylishType.co</span>
+                  <span className="text-xl font-bold text-brand-accent">Letterena Studios</span>
                 </Link>
               </div>
               <div className="flex items-center gap-4">
@@ -180,7 +180,7 @@ const Navbar = ({
           <div className="flex items-center justify-between p-6 border-b border-white/10">
             <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
               {/* --- PERUBAHAN LOGO 3 (MOBILE SIDEBAR) --- */}
-              <span className="text-xl font-bold text-brand-accent">stylishType.co</span>
+              <span className="text-xl font-bold text-brand-accent">Letterena Studios</span>
             </Link>
             <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu">
               <X size={24} />

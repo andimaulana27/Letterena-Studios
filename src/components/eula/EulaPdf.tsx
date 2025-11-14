@@ -1,5 +1,4 @@
 // src/components/eula/EulaPdf.tsx
-// PERBAIKAN: Baris 'use client'; telah dihapus
 
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
@@ -124,7 +123,8 @@ export const EulaPdf = ({ data }: EulaPdfProps) => {
 
                 <View style={{...styles.section, borderBottomWidth: 0}}>
                     <Text style={styles.introText}>
-                        This End User License Agreement, including any supplemental terms (collectively, The “EULA”) is between you (an individual, company, or any other entity) and TimelessType.co and governs the usage of TimelessType.co’s product.
+                        {/* --- PERUBAHAN NAMA PERUSAHAAN --- */}
+                        This End User License Agreement, including any supplemental terms (collectively, The “EULA”) is between you (an individual, company, or any other entity) and Letterena Studios and governs the usage of Letterena Studios’s product.
                     </Text>
                 </View>
                 
@@ -140,7 +140,8 @@ export const EulaPdf = ({ data }: EulaPdfProps) => {
                      <View style={styles.detailRow}>
                         <Text style={styles.detailLabel}>Licensor</Text>
                         <View style={{...styles.detailValue, ...styles.addressContainer}}>
-                            <Text>TimelessType.co</Text>
+                            {/* --- PERUBAHAN NAMA PERUSAHAAN --- */}
+                            <Text>Letterena Studios</Text>
                             <Text>Jl. Yos Sudarso, Cirebon</Text>
                             <Text>Jawa Barat Indonesia 45111</Text>
                         </View>

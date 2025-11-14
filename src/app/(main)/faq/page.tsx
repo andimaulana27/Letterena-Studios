@@ -9,7 +9,9 @@ import { cookies } from 'next/headers';
 import { Database } from '@/lib/database.types';
 
 export const metadata: Metadata = {
-  title: 'FAQ | Stylish Type',
+  // --- PERUBAHAN DI SINI ---
+  title: 'FAQ | Letterena Studios',
+  // --- AKHIR PERUBAHAN ---
   description: 'Find answers to frequently asked questions about our fonts, licensing, and policies.',
 };
 

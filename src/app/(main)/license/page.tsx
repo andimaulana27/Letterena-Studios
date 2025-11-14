@@ -13,7 +13,9 @@ import { Database } from '@/lib/database.types';
 const TestimonialSection = dynamic(() => import('@/components/TestimonialSection'), { ssr: false });
 
 export const metadata: Metadata = {
-  title: 'Licensing | Stylish Type',
+  // --- PERUBAHAN DI SINI ---
+  title: 'Licensing | Letterena Studios',
+  // --- AKHIR PERUBAHAN ---
   description: 'Find the right font license for your project. Compare our flexible licensing options for personal, commercial, and enterprise use.',
 };
 
@@ -196,7 +198,6 @@ export default async function LicensePage() {
   const licenseGroup1 = allLicenseNames.slice(0, 8);
   const licenseGroup2 = allLicenseNames.slice(8);
   
-  // --- PERUBAHAN: Menambahkan separatorClasses ---
   const separatorClasses = "border-b border-white/10";
 
   return (
@@ -209,7 +210,6 @@ export default async function LicensePage() {
             />
           </section>
         
-        {/* --- PERUBAHAN: Membungkus Section 2 --- */}
         <div className={separatorClasses}>
           <div className="container mx-auto px-6 py-16 space-y-16">
             <LicenseComparisonTable licenses={licenseGroup1} features={allFeatures} />
@@ -217,17 +217,14 @@ export default async function LicensePage() {
           </div>
         </div>
 
-        {/* --- PERUBAHAN: Membungkus Section 3 --- */}
         <div className={separatorClasses}>
           <LicenseCardGrid licenses={licenseDetailsData} />
         </div>
         
-        {/* --- PERUBAHAN: Membungkus Section 4 --- */}
         <div className={separatorClasses}>
             <TestimonialSection />
         </div>
 
-        {/* --- PERUBAHAN: Section 5 (Terakhir) TIDAK dibungkus --- */}
         <TrustedBySection brands={brands || []} />
         <BackToTopButton />
       </main>

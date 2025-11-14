@@ -21,14 +21,18 @@ export async function generateMetadata({ searchParams }: { searchParams: { [key:
 
   if (category && category !== 'All Categories') {
     return {
-      title: `${category} Articles | Stylish Type Blog`,
-      description: `Explore all articles about ${category} on the Stylish Type blog. Find tutorials, inspiration, and tips to elevate your design skills.`,
+      // --- PERUBAHAN DI SINI ---
+      title: `${category} Articles | Letterena Studios Blog`,
+      description: `Explore all articles about ${category} on the Letterena Studios blog. Find tutorials, inspiration, and tips to elevate your design skills.`,
+      // --- AKHIR PERUBAHAN ---
     };
   }
 
   return {
-    title: 'Font Talks & Type Tips | Stylish Type Blog',
+    // --- PERUBAHAN DI SINI ---
+    title: 'Font Talks & Type Tips | Letterena Studios Blog',
     description: 'Explore our latest thoughts, tricks, and tools to help you master the art of timeless typography.',
+    // --- AKHIR PERUBAHAN ---
   };
 }
 

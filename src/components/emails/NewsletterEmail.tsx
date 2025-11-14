@@ -82,7 +82,8 @@ export const NewsletterEmail: React.FC<NewsletterEmailProps> = ({
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`${siteUrl}/EMAIL.jpg`} // Pastikan path banner ini benar
-                        alt="Timeless Type Newsletter"
+                        // --- PERUBAHAN NAMA PERUSAHAAN ---
+                        alt="Letterena Studios Newsletter"
                         style={bannerStyle}
                       />
                     </td>
@@ -123,7 +124,8 @@ export const NewsletterEmail: React.FC<NewsletterEmailProps> = ({
               <div style={footerStyle}>
                   {/* Idealnya, tambahkan link unsubscribe di sini */}
                   <p>Anda menerima email ini karena Anda berlangganan newsletter kami.</p>
-                  © {new Date().getFullYear()} Timelesstype.co. All Rights Reserved.
+                  {/* --- PERUBAHAN NAMA PERUSAHAAN --- */}
+                  © {new Date().getFullYear()} Letterena Studios. All Rights Reserved.
               </div>
             </td>
           </tr>

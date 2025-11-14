@@ -4,8 +4,10 @@ import LoginClientPage from './LoginClientPage'; // Impor komponen client yang b
 
 // Di sini kita bisa mengekspor metadata dengan aman
 export const metadata: Metadata = {
-  title: 'Login or Create Account | Stylish Type',
-  description: 'Sign in to your Stylish Type account to access your purchased fonts and manage your subscription, or create a new account to start your creative journey.',
+  // --- PERUBAHAN DI SINI ---
+  title: 'Login or Create Account | Letterena Studios',
+  description: 'Sign in to your Letterena Studios account to access your purchased fonts and manage your subscription, or create a new account to start your creative journey.',
+  // --- AKHIR PERUBAHAN ---
 };
 
 // Halaman ini sekarang adalah Server Component

@@ -31,7 +31,7 @@ const socialLinks = [
 const ShareButtons = ({ url, title }: ShareButtonsProps) => {
   const fullUrl = typeof window !== 'undefined' 
     ? `${window.location.origin}${url}` 
-    : `https://timelesstype.co${url}`;
+    : `httpsE://letterenastudios.com${url}`; // --- PERUBAHAN DOMAIN FALLBACK ---
 
   return (
     <div className="mt-12 pt-8 border-t border-white/10">

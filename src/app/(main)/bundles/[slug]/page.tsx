@@ -67,7 +67,9 @@ export async function generateMetadata(
     },
     brand: {
       '@type': 'Brand',
-      name: 'Stylish Type',
+      // --- PERUBAHAN DI SINI ---
+      name: 'Letterena Studios',
+      // --- AKHIR PERUBAHAN ---
     },
   };
 
@@ -77,7 +79,9 @@ export async function generateMetadata(
     keywords: allTags,
     alternates: { canonical: `/bundles/${params.slug}` },
     openGraph: {
-      title: `${bundle.name} | Stylish Type`,
+      // --- PERUBAHAN DI SINI ---
+      title: `${bundle.name} | Letterena Studios`,
+      // --- AKHIR PERUBAHAN ---
       description: descriptionText,
       images: [firstImage, ...previousImages],
       url: `/bundles/${params.slug}`,
@@ -85,7 +89,9 @@ export async function generateMetadata(
     },
     twitter: {
         card: 'summary_large_image',
-        title: `${bundle.name} | Stylish Type`,
+        // --- PERUBAHAN DI SINI ---
+        title: `${bundle.name} | Letterena Studios`,
+        // --- AKHIR PERUBAHAN ---
         description: descriptionText,
         images: [firstImage],
     },
@@ -199,7 +205,9 @@ export default async function BundleDetailPage({ params }: { params: { slug: str
             <aside className="w-full lg:col-span-1 sticky top-28 h-fit">
               <div className='bg-brand-darkest p-8 rounded-lg border border-white/10'>
                 <ProductTitle title={bundle.name} />
-                <p className='text-brand-accent mt-2'>by Stylish Type</p>
+                {/* --- PERUBAHAN DI SINI --- */}
+                <p className='text-brand-accent mt-2'>by Letterena Studios</p>
+                {/* --- AKHIR PERUBAHAN --- */}
                 {!activeSubscription && <SubscriptionBenefitsCard />}
                 <div className="border-b border-white/10 my-6"></div>
                 <LicenseSelector font={productDataForLicenseSelector} licenses={licenses || []} />

@@ -12,7 +12,9 @@ import { Metadata } from 'next';
 const BlogCarousel = dynamic(() => import('@/components/blog/BlogCarousel'));
 
 export const metadata: Metadata = {
-  title: 'Logotype Tester | Stylish Type',
+  // --- PERUBAHAN DI SINI ---
+  title: 'Logotype Tester | Letterena Studios',
+  // --- AKHIR PERUBAHAN ---
   description: 'Find the right typeface to make your logo stand out. Instantly preview your brand name with hundreds of our premium logotype font styles.',
 };
 
@@ -64,7 +66,9 @@ export default async function LogotypePage() {
                     <div className="container mx-auto px-6">
                         <SectionHeader
                             title="Our Staff Picks"
-                            subtitle="Check out some of our favorite fonts, curated by the Stylish Type team."
+                            // --- PERUBAHAN DI SINI ---
+                            subtitle="Check out some of our favorite fonts, curated by the Letterena Studios team."
+                            // --- AKHIR PERUBAHAN ---
                         />
                     </div>
                     <MarqueeRow products={marqueeFonts} animationClass="animate-marquee-reverse-fast" />

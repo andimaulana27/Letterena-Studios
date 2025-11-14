@@ -55,7 +55,9 @@ const OrderSummary = ({ subscriptionPlan, billingCycle, priceDifference }: {
           {isSubscriptionCheckout && subscriptionPlan ? (
             <div className="flex items-center gap-4">
                <div className="w-16 h-16 bg-brand-primary-blue/20 rounded-md flex items-center justify-center">
-                  <Image src="/logo-stylishtype-footer.png" alt="Stylishtype Logo" width={48} height={48} className="opacity-50" />
+                  {/* --- PERUBAHAN DI SINI --- */}
+                  <Image src="/logo-letterena-studios-footer.png" alt="Letterena Studios Logo" width={48} height={48} className="opacity-50" />
+                  {/* --- AKHIR PERUBAHAN --- */}
                </div>
                <div>
                   <p className="font-medium text-brand-light leading-tight">{subscriptionPlan.name}</p>

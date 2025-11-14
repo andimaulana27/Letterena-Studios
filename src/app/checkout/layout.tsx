@@ -18,7 +18,9 @@ export default function CheckoutLayout({
             <Link href="/" aria-label="Back to Homepage">
               <Image 
                 src="/LOGO BARU ORANGE.svg" 
-                alt="Stylishtype Logo" 
+                // --- PERUBAHAN DI SINI ---
+                alt="Letterena Studios Logo" 
+                // --- AKHIR PERUBAHAN ---
                 width={210} 
                 height={40} 
               />
@@ -35,7 +37,9 @@ export default function CheckoutLayout({
         </main>
 
         <footer className="py-6 text-center text-md text-brand-light-muted">
-           <p>© {new Date().getFullYear()} Stylishtype.co. All rights reserved.</p>
+           {/* --- PERUBAHAN DI SINI --- */}
+           <p>© {new Date().getFullYear()} letterena.com. All rights reserved.</p>
+           {/* --- AKHIR PERUBAHAN --- */}
         </footer>
       </div>
     </PayPalProvider>

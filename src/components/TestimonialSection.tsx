@@ -9,7 +9,8 @@ import StarIcon from './icons/StarIcon';
 // Data tidak berubah, tetap sama seperti sebelumnya
 const testimonials = [
   {
-    quote: "As a freelance designer, fonts are the backbone of my projects. The ones I bought from Timelesstype.co instantly elevated my work. They’re elegant, unique, and versatile across platforms. Clients noticed the upgrade immediately, saying the designs looked premium and professional. Truly worth the investment.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "As a freelance designer, fonts are the backbone of my projects. The ones I bought from Letterena Studios instantly elevated my work. They’re elegant, unique, and versatile across platforms. Clients noticed the upgrade immediately, saying the designs looked premium and professional. Truly worth the investment.",
     author: "Sarah Collins",
     title: "Freelance Graphic Designer",
     avatar: "/images/avatar/1.jpg"
@@ -27,13 +28,15 @@ const testimonials = [
     avatar: "/images/avatar/3.jpg"
   },
   {
-    quote: "I didn’t realize how much fonts could influence perception until I tried Timelesstype.co. My packaging looked instantly more luxurious, and customers noticed the difference. Buying a bundle made it even better — so many high-quality fonts for a fraction of what I used to pay.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "I didn’t realize how much fonts could influence perception until I tried Letterena Studios. My packaging looked instantly more luxurious, and customers noticed the difference. Buying a bundle made it even better — so many high-quality fonts for a fraction of what I used to pay.",
     author: "Michael Foster",
     title: "Packaging Designer",
     avatar: "/images/avatar/4.jpg"
   },
   {
-    quote: "As a social media manager, visuals are everything. Timelesstype.co fonts have become my go-to. They’re elegant, easy to use, and always aesthetic. Thanks to the subscription plan, I never worry about budgets anymore — I download whatever I need, anytime, without overspending. It’s perfect.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "As a social media manager, visuals are everything. Letterena Studios fonts have become my go-to. They’re elegant, easy to use, and always aesthetic. Thanks to the subscription plan, I never worry about budgets anymore — I download whatever I need, anytime, without overspending. It’s perfect.",
     author: "Rachel Kim",
     title: "Social Media Manager",
     avatar: "/images/avatar/5.jpg"
@@ -45,7 +48,8 @@ const testimonials = [
     avatar: "/images/avatar/6.jpg"
   },
   {
-    quote: "As a wedding planner, I constantly need classy script fonts. Buying a bundle from Timelesstype.co solved everything. I now have multiple premium options ready for invitations, menus, and décor. Clients love the elegant feel, and I saved a lot compared to individual purchases.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "As a wedding planner, I constantly need classy script fonts. Buying a bundle from Letterena Studios solved everything. I now have multiple premium options ready for invitations, menus, and décor. Clients love the elegant feel, and I saved a lot compared to individual purchases.",
     author: "Emily Turner",
     title: "Wedding Planner",
     avatar: "/images/avatar/7.jpg"
@@ -57,13 +61,15 @@ const testimonials = [
     avatar: "/images/avatar/8.jpg"
   },
   {
-    quote: "As a small business owner, cost matters. Timelesstype.co bundles are the perfect solution. Premium-quality fonts at a fraction of the price make branding affordable without sacrificing professionalism. Customers keep commenting on how polished my designs look. It’s one of the smartest business investments I’ve made.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "As a small business owner, cost matters. Letterena Studios bundles are the perfect solution. Premium-quality fonts at a fraction of the price make branding affordable without sacrificing professionalism. Customers keep commenting on how polished my designs look. It’s one of the smartest business investments I’ve made.",
     author: "Sophia Bennett",
     title: "Small Business Owner",
     avatar: "/images/avatar/9.jpg"
   },
   {
-    quote: "Timelesstype.co fonts transformed my Instagram page. They look stylish, classy, and instantly more professional. Thanks to the subscription plan, I don’t feel guilty experimenting with different typefaces. My followers noticed the upgrade too, and engagement rates actually improved after updating my visuals with better typography.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "Letterena Studios fonts transformed my Instagram page. They look stylish, classy, and instantly more professional. Thanks to the subscription plan, I don’t feel guilty experimenting with different typefaces. My followers noticed the upgrade too, and engagement rates actually improved after updating my visuals with better typography.",
     author: "Lucas Howard",
     title: "Content Creator",
     avatar: "/images/avatar/10.jpg"
@@ -75,19 +81,21 @@ const testimonials = [
     avatar: "/images/avatar/11.jpg"
   },
   {
-    quote: "As a creative director, I know how fast font expenses add up. The subscription at Timelesstype.co completely solved that issue. Unlimited downloads allow my team to experiment freely, and we save almost 99% compared to buying licenses individually. The quality is consistently top-notch.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "As a creative director, I know how fast font expenses add up. The subscription at Letterena Studios completely solved that issue. Unlimited downloads allow my team to experiment freely, and we save almost 99% compared to buying licenses individually. The quality is consistently top-notch.",
     author: "Ethan Brooks",
     title: "Creative Director",
     avatar: "/images/avatar/12.jpg"
   },
   {
-    quote: "I used a script font from Timelesstype.co for my skincare brand. Customers thought I’d hired a professional designer, but the secret was just better typography. Fonts are incredibly elegant and premium. They gave my brand new life and helped me stand out in a crowded market.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "I used a script font from Letterena Studios for my skincare brand. Customers thought I’d hired a professional designer, but the secret was just better typography. Fonts are incredibly elegant and premium. They gave my brand new life and helped me stand out in a crowded market.",
     author: "Lily Morgan",
     title: "Skincare Entrepreneur",
     avatar: "/images/avatar/13.jpg"
   },
   {
-    quote: "Bundles have become my go-to purchase. Instead of buying random fonts separately, I get a whole collection at once. Clients love the variety I can provide, and I don’t have to worry about going over budget. It’s the perfect mix of affordability and quality.",
+    quote: "Bundles have become my go-to purchase. Instead of buying fonts randomly, I get a whole collection at once. Clients love the variety I can provide, and I don’t have to worry about going over budget. It’s the perfect mix of affordability and quality.",
     author: "Nathan Reed",
     title: "Branding Designer",
     avatar: "/images/avatar/14.jpg"
@@ -129,13 +137,15 @@ const testimonials = [
     avatar: "/images/avatar/20.jpg"
   },
   {
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
     quote: "The subscription feels like Netflix for fonts. I download as many as I want, try different styles, and never overspend. For agencies, it’s a no-brainer. Having unlimited premium fonts available at any time saves both money and time while boosting creativity.",
     author: "Sophia Adams",
     title: "Art Director",
     avatar: "/images/avatar/21.jpg"
   },
   {
-    quote: "I redesigned food packaging using fonts from Timelesstype.co, and customers thought we had completely rebranded. The new look feels premium and trustworthy, just by changing typography. The value is incredible for the small investment. Fonts matter more than most people realize.",
+    // --- PERUBAHAN NAMA PERUSAHAAN ---
+    quote: "I redesigned food packaging using fonts from Letterena Studios, and customers thought we had completely rebranded. The new look feels premium and trustworthy, just by changing typography. The value is incredible for the small investment. Fonts matter more than most people realize.",
     author: "Jacob Wallace",
     title: "Food Entrepreneur",
     avatar: "/images/avatar/22.jpg"

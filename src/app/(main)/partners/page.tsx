@@ -8,8 +8,16 @@ import MarqueeRow from '@/components/MarqueeRow';
 import BackToTopButton from '@/components/BackToTopButton';
 import Button from '@/components/Button';
 import { getAllFontsForMarqueeAction } from '@/app/actions/productActions';
+// --- PERUBAHAN: Impor Metadata ---
+import { Metadata } from 'next';
 
 export const revalidate = 3600;
+
+// --- PERUBAHAN: Tambah Metadata ---
+export const metadata: Metadata = {
+  title: 'Our Partners | Letterena Studios',
+  description: 'Meet the talented designers and foundries we are proud to collaborate with at Letterena Studios.',
+};
 
 const PartnerCard = ({ name, description, logoUrl, slug }: { name: string; description: string | null; logoUrl: string | null; slug: string; }) => (
     <div className="text-center flex flex-col items-center group">

@@ -18,7 +18,7 @@ const config: Config = {
       },
       colors: {
         'brand-darkest': '#121212',
-        'brand-dark-secondary': '#171717',
+        'brand-dark-secondary': '#0d1216',
         'brand-gray-light': '#2A2A2A',
         'brand-light': '#FFFFFF',
         'brand-light-muted': '#A0A0A0',

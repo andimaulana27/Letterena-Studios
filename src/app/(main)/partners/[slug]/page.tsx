@@ -40,8 +40,10 @@ export async function generateMetadata(
   }
 
   return {
-    title: `Fonts by ${partner.name} | Stylish Type`,
-    description: partner.subheadline || `Explore the complete font collection from our creative partner, ${partner.name}, available on Stylish Type.`,
+    // --- PERUBAHAN DI SINI ---
+    title: `Fonts by ${partner.name} | Letterena Studios`,
+    description: partner.subheadline || `Explore the complete font collection from our creative partner, ${partner.name}, available on Letterena Studios.`,
+    // --- AKHIR PERUBAHAN ---
   };
 }
 

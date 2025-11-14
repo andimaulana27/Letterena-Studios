@@ -701,9 +701,9 @@ export async function deleteFontAction(fontId: string) {
         return { error: 'An unexpected error occurred during deletion.' };
     }
 
-    revalidatePath('/admin/products/fonts');
-    revalidatePath('/product');
-    return { success: 'Font deleted successfully!' };
+  revalidatePath('/admin/products/fonts');
+  revalidatePath('/product');
+  return { success: 'Font deleted successfully!' };
 }
 
 

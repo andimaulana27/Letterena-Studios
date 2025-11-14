@@ -236,10 +236,11 @@ export async function sendNewsletterAction(
       return { error: 'No recipients found for the selected criteria.' };
     }
 
-    // --- PERUBAHAN 2: Gunakan template email baru ---
+    // --- PERUBAHAN DI SINI ---
     const { error } = await resend.emails.send({
-      from: 'stylish Type Newsletter <marketing@stylishtype.co>', // Ganti dengan email Anda
-      to: 'noreply@stylishtype.co', // Alamat 'to' utama (tidak terlihat oleh penerima)
+      from: 'Letterena Studios Newsletter <marketing@letterena.com>', // Ganti dengan email Anda
+      to: 'noreply@letterena.com', // Alamat 'to' utama (tidak terlihat oleh penerima)
+    // --- AKHIR PERUBAHAN ---
       bcc: targetEmails, // Kirim ke semua target via BCC
       subject: subject,
       react: NewsletterEmail({ htmlContent }), // <-- Menggunakan komponen React baru

@@ -41,7 +41,8 @@ export const UIProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>(() => {
     if (typeof window !== 'undefined') {
       try {
-        const savedCart = localStorage.getItem('timeless-type-cart');
+        // --- PERUBAHAN NAMA LOCALSTORAGE ---
+        const savedCart = localStorage.getItem('letterena-studios-cart');
         return savedCart ? JSON.parse(savedCart) : [];
       } catch (error) {
         console.error("Gagal membaca keranjang dari localStorage", error);
@@ -55,7 +56,8 @@ export const UIProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('timeless-type-cart', JSON.stringify(cart));
+      // --- PERUBAHAN NAMA LOCALSTORAGE ---
+      localStorage.setItem('letterena-studios-cart', JSON.stringify(cart));
     } catch (error) {
       console.error("Gagal menyimpan keranjang ke localStorage", error);
     }

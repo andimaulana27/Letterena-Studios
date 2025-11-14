@@ -166,7 +166,8 @@ export const AdminOrderNotificationEmail: React.FC<AdminOrderNotificationEmailPr
                     <td style={contentContainerStyle}>
                       <h1 style={headingStyle}>Great news: You just made a sale!</h1>
                       <p style={textStyle}>
-                        An order has been placed on Stylish Type. Here are the details:
+                        {/* --- PERUBAHAN NAMA PERUSAHAAN DI SINI --- */}
+                        An order has been placed on Letterena Studios. Here are the details:
                       </p>
 
                       <div style={detailsContainerStyle}>
@@ -218,7 +219,8 @@ export const AdminOrderNotificationEmail: React.FC<AdminOrderNotificationEmailPr
 
               {/* === FOOTER === */}
               <div style={footerStyle}>
-                  This is an automated notification for Stylish Type administrators.
+                  {/* --- PERUBAHAN NAMA PERUSAHAAN DI SINI --- */}
+                  This is an automated notification for Letterena Studios administrators.
               </div>
             </td>
           </tr>

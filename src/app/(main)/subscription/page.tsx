@@ -28,7 +28,9 @@ const SectionSkeleton = () => (
 );
 
 export const metadata: Metadata = {
-  title: 'Font Subscription Plans | Stylish Type',
+  // --- PERUBAHAN DI SINI ---
+  title: 'Font Subscription Plans | Letterena Studios',
+  // --- AKHIR PERUBAHAN ---
   description: 'Access our entire library of 100+ premium fonts with one simple subscription. Unlock creative freedom and unlimited downloads for one affordable price.',
 };
 

@@ -4,7 +4,7 @@
 import { cookies } from 'next/headers';
 
 // --- PERBAIKAN DI SINI ---
-const CONSENT_COOKIE_NAME = 'stylishtype_cookie_consent';
+const CONSENT_COOKIE_NAME = 'letterena_studios_cookie_consent';
 // --- AKHIR PERBAIKAN ---
 
 /**

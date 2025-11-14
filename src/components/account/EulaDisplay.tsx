@@ -68,7 +68,8 @@ export default function EulaDisplay({ eulaData }: EulaDisplayProps) {
         <div className="text-center py-8 border-b border-white/10">
           <Image 
               src="/LOGO BARU ORANGE.png" 
-              alt="Timeless Type Logo" 
+              // --- PERUBAHAN NAMA PERUSAHAAN ---
+              alt="Letterena Studios Logo" 
               width={300}
               height={57}
               className="mx-auto" 
@@ -82,7 +83,8 @@ export default function EulaDisplay({ eulaData }: EulaDisplayProps) {
 
         <div className="text-center py-8  ">
           <p className="text-sm text-brand-light-muted max-w-2xl mx-auto">
-            This End User License Agreement, including any supplemental terms (collectively, The “EULA”) is between you (an individual, company, or any other entity) and TimelessType.co and governs the usage of TimelessType.co’s product.
+            {/* --- PERUBAHAN NAMA PERUSAHAAN --- */}
+            This End User License Agreement, including any supplemental terms (collectively, The “EULA”) is between you (an individual, company, or any other entity) and Letterena Studios and governs the usage of Letterena Studios’s product.
           </p>
         </div>
         
@@ -95,7 +97,8 @@ export default function EulaDisplay({ eulaData }: EulaDisplayProps) {
           </DetailRow>
           <DetailRow label="Licensor">
             <div className="text-white space-y-1">
-              <p>TimelessType.co</p>
+              {/* --- PERUBAHAN NAMA PERUSAHAAN --- */}
+              <p>Letterena Studios</p>
               <p>Jl. Yos Sudarso, Cirebon</p>
               <p>Jawa Barat Indonesia 45111</p>
             </div>

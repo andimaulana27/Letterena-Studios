@@ -52,7 +52,26 @@ export async function generateMetadata(
       ? font.main_description.replace(/<[^>]*>/g, '').split('. ')[0] + '.'
       : 'Discover the ' + font.name + ' font, a premium typeface perfect for your design projects.';
 
-    const jsonLd = { /* ... (kode JSON-LD tetap sama) ... */ };
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: font.name,
+      description: descriptionText,
+      image: firstImage,
+      offers: {
+        '@type': 'Offer',
+        price: font.price?.toFixed(2) || '0.00',
+        priceCurrency: 'USD',
+        availability: 'https://schema.org/InStock',
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/product/${slug}`,
+      },
+      brand: {
+        '@type': 'Brand',
+        // --- PERUBAHAN DI SINI ---
+        name: 'Letterena Studios',
+        // --- AKHIR PERUBAHAN ---
+      },
+    };
 
     return {
       title: `${font.name} Font`,
@@ -60,13 +79,22 @@ export async function generateMetadata(
       keywords: font.tags || [],
       alternates: { canonical: `/product/${slug}` },
       openGraph: {
-        title: `${font.name} Font | Stylish Type`,
+        // --- PERUBAHAN DI SINI ---
+        title: `${font.name} Font | Letterena Studios`,
+        // --- AKHIR PERUBAHAN ---
         description: descriptionText,
         images: [firstImage, ...previousImages],
         url: `/product/${slug}`,
         type: 'article',
       },
-      twitter: { /* ... (kode twitter tetap sama) ... */ },
+      twitter: {
+        card: 'summary_large_image',
+        // --- PERUBAHAN DI SINI ---
+        title: `${font.name} Font | Letterena Studios`,
+        // --- AKHIR PERUBAHAN ---
+        description: descriptionText,
+        images: [firstImage],
+      },
       other: { 'script[type="application/ld+json"]': JSON.stringify(jsonLd) },
     };
   } catch (error) {
@@ -156,8 +184,10 @@ export default async function FontDetailPage({ params }: { params: { slug: strin
   };
 
   const glyphs = (font.glyphs_json as string[]) || [];
-  const partnerName = font.partners?.name || 'Stylish Type';
-  const partnerHref = font.partners ? `/partners/${font.partners.slug}` : '/product?partner=stylish-type';
+  // --- PERUBAHAN DI SINI ---
+  const partnerName = font.partners?.name || 'Letterena Studios';
+  const partnerHref = font.partners ? `/partners/${font.partners.slug}` : '/product?partner=letterena-studios';
+  // --- AKHIR PERUBAHAN ---
 
   return (
     <>

@@ -28,7 +28,9 @@ export async function generateMetadata({ searchParams }: { searchParams: { [key:
 
   if (category && category !== 'All') {
     return {
-      title: `${category} Fonts | Stylish Type`,
+      // --- PERUBAHAN DI SINI ---
+      title: `${category} Fonts | Letterena Studios`,
+      // --- AKHIR PERUBAHAN ---
       description: `Browse our collection of high-quality ${category} fonts. Perfect for designers and creatives looking for the right typeface.`,
     };
   }
@@ -36,13 +38,17 @@ export async function generateMetadata({ searchParams }: { searchParams: { [key:
   if (tag) {
     const capitalizedTag = tag.charAt(0).toUpperCase() + tag.slice(1);
     return {
-      title: `Fonts Tagged with "${capitalizedTag}" | Stylish Type`,
+      // --- PERUBAHAN DI SINI ---
+      title: `Fonts Tagged with "${capitalizedTag}" | Letterena Studios`,
+      // --- AKHIR PERUBAHAN ---
       description: `Discover all premium fonts tagged with "${capitalizedTag}". Find the perfect style for your next design project.`,
     };
   }
   
   return {
-    title: 'All Premium Fonts for Designers | Stylish Type',
+    // --- PERUBAHAN DI SINI ---
+    title: 'All Premium Fonts for Designers | Letterena Studios',
+    // --- AKHIR PERUBAHAN ---
     description: 'Explore diverse font categories including modern, classic, decorative, and thematic styles. Perfect for designers and creatives looking for the right typeface for any project.',
   };
 }

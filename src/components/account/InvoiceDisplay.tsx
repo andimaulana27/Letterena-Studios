@@ -64,12 +64,14 @@ export default function InvoiceDisplay({ invoice }: InvoiceDisplayProps) {
         <div className="relative z-10">
             <div className="flex justify-between items-start pb-8 mb-8 border-b border-white/10">
               <div>
-                {/* --- PEMBARUAN PATH LOGO DI SINI --- */}
-                <Image src="/LOGO BARU ORANGE.png" alt="Company Logo" width={200} height={50} />
-                <p className="text-xs text-gray-400 mt-2">TIMELESS TYPOGRAPHY FOR TIMELESS COMPANY.</p>
+                {/* --- PEMBARUAN PATH LOGO & ALT DI SINI --- */}
+                <Image src="/LOGO BARU ORANGE.png" alt="Letterena Studios Logo" width={200} height={50} />
+                {/* --- PERUBAHAN SLOGAN --- */}
+                <p className="text-xs text-gray-400 mt-2">PREMIUM FONTS FOR DESIGN STUDIOS.</p>
               </div>
               <div className="text-right text-sm text-gray-300">
-                <p className="font-bold text-white">TimelessType.co</p>
+                {/* --- PERUBAHAN NAMA PERUSAHAAN --- */}
+                <p className="font-bold text-white">Letterena Studios</p>
                 <p>Jl. Yos Sudarso, Cirebon</p>
                 <p>Jawa Barat Indonesia 45111</p>
               </div>

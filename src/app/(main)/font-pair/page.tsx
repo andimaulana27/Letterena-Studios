@@ -12,7 +12,9 @@ const BlogCarousel = dynamic(() => import('@/components/blog/BlogCarousel'));
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: 'Font Pairing Tool | Stylish Type',
+  // --- PERUBAHAN DI SINI ---
+  title: 'Font Pairing Tool | Letterena Studios',
+  // --- AKHIR PERUBAHAN ---
   description: 'Experiment with font combinations in real time. Our Font Pairing Tester helps you find the perfect match for headings and body text for your design projects.',
 };
 
@@ -44,7 +46,9 @@ export default async function FontPairPage() {
               <div className="container mx-auto px-6">
                   <SectionHeader
                       title="Our Staff Picks"
-                      subtitle="Check out some of our favorite fonts, curated by the Stylish Type team."
+                      // --- PERUBAHAN DI SINI ---
+                      subtitle="Check out some of our favorite fonts, curated by the Letterena Studios team."
+                      // --- AKHIR PERUBAHAN ---
                   />
               </div>
               <MarqueeRow products={marqueeFonts} animationClass="animate-marquee-reverse-fast" />

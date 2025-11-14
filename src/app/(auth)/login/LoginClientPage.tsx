@@ -124,9 +124,11 @@ export default function LoginClientPage() {
       `}</style>
 
       <div className="flex flex-col items-center text-center w-full">
+        {/* --- PERUBAHAN DI SINI --- */}
         <h1 className="text-5xl md:text-5xl font-semibold text-brand-light">
-          Welcome to Stylish Type
+          Welcome to Letterena Studios
         </h1>
+        {/* --- AKHIR PERUBAHAN --- */}
         <div className="w-24 h-1 bg-brand-accent mx-auto my-6 rounded-full"></div>
         <p className="text-lg text-brand-light-muted max-w-xl">
           Sign in to access your account or create a new one to start your creative journey.
@@ -210,7 +212,9 @@ export default function LoginClientPage() {
                 </div>
                 <div className={`absolute transition-opacity duration-500 ${isRegisterView ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                   <h2 className="text-3xl font-semibold">New Here? Let&apos;s Get Started.</h2>
-                  <p className="mt-4 text-sm font-light text-brand-light-muted">Join Stylish Type to download premium fonts, explore curated bundles, and unlock creative benefits.</p>
+                  {/* --- PERUBAHAN DI SINI --- */}
+                  <p className="mt-4 text-sm font-light text-brand-light-muted">Join Letterena Studios to download premium fonts, explore curated bundles, and unlock creative benefits.</p>
+                  {/* --- AKHIR PERUBAHAN --- */}
                   <button 
                     onClick={() => setIsRegisterView(false)}
                     className={overlayButtonClasses}>
@@ -228,9 +232,11 @@ export default function LoginClientPage() {
             <span className="mx-2">|</span>
             <Link href="/privacy" className="hover:text-brand-accent">Privacy Policy</Link>
           </div>
+          {/* --- PERUBAHAN DI SINI --- */}
           <p className="text-md text-brand-light-muted/50 mt-2">
-            © {new Date().getFullYear()} Stylishtype.co. All Rights Reserved.
+            © {new Date().getFullYear()} Letterena Studios. All Rights Reserved.
           </p>
+          {/* --- AKHIR PERUBAHAN --- */}
         </div>
       </div>
     </>

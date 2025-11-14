@@ -185,7 +185,8 @@ export const InvoicePdf = ({ data }: { data: InvoiceData }) => {
               <Image style={styles.logo} src={logoUrl} />
           </View>
           <View style={styles.companyDetails}>
-              <Text style={{fontWeight: 'bold', color: '#FFFFFF'}}>TimelessType.co</Text>
+              {/* --- PERUBAHAN NAMA PERUSAHAAN --- */}
+              <Text style={{fontWeight: 'bold', color: '#FFFFFF'}}>Letterena Studios</Text>
               <Text>Jl. Yos Sudarso</Text>
               <Text>Cangkol Utara - Cirebon</Text>
               <Text>Jawa Barat Indonesia 45111</Text>

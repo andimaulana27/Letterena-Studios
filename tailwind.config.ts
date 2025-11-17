@@ -17,7 +17,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       colors: {
-        'brand-darkest': '#121212',
+        'brand-darkest': '#090d10',
         'brand-dark-secondary': '#0d1216',
         'brand-gray-light': '#2A2A2A',
         'brand-light': '#FFFFFF',

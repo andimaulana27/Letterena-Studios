@@ -16,7 +16,7 @@ const SideCart = ({ children }: { children: React.ReactNode }) => {
         onClick={closeCartSidebar}
       />
       
-      <div className={`fixed top-0 right-0 h-full w-full max-w-md bg-[#1e1e1e] text-brand-light shadow-2xl transform transition-transform duration-300 ease-in-out z-50 flex flex-col ${isCartSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 h-full w-full max-w-md bg-[#11181d] text-brand-light shadow-2xl transform transition-transform duration-300 ease-in-out z-50 flex flex-col ${isCartSidebarOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex items-center justify-between p-6 border-b border-brand-gray-light flex-shrink-0">
           <h2 className="text-xl font-semibold text-brand-accent">Your Cart ({cartCount})</h2>
           <button onClick={closeCartSidebar} className="hover:text-brand-accent transition-colors">

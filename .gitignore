@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+# migrasi skript
+/migration_script
+
 # next.js
 /.next/
 /out/

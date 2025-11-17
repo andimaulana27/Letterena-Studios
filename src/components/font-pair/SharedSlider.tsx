@@ -38,7 +38,7 @@ const SharedSlider = ({
           <Slider.Range className="absolute bg-brand-accent rounded-full h-full" />
         </Slider.Track>
         <Slider.Thumb
-          className={`block w-4 h-4 bg-[#1e1e1e] border-2 border-brand-accent rounded-full focus:outline-none ${disabled ? '' : 'cursor-grab active-cursor-grabbing'}`}
+          className={`block w-4 h-4 bg-[#11181d] border-2 border-brand-accent rounded-full focus:outline-none ${disabled ? '' : 'cursor-grab active-cursor-grabbing'}`}
           aria-label={label}
         />
       </Slider.Root>

@@ -43,7 +43,7 @@ const RadixStyledSlider = ({
           <Slider.Range className="absolute bg-brand-accent rounded-full h-full" />
         </Slider.Track>
         <Slider.Thumb
-          className={`block w-4 h-4 bg-[#1e1e1e] border-2 border-brand-accent rounded-full focus:outline-none ${disabled ? '' : 'cursor-grab active:cursor-grabbing'}`}
+          className={`block w-4 h-4 bg-[#11181d] border-2 border-brand-accent rounded-full focus:outline-none ${disabled ? '' : 'cursor-grab active:cursor-grabbing'}`}
           aria-label={label}
         />
       </Slider.Root>
@@ -75,7 +75,7 @@ const CustomDropdown = <TValue extends string>({
           <ChevronDown className={`w-4 h-4 transition-all duration-200 text-brand-light-muted group-hover/text-brand-accent ${open ? 'rotate-180 text-brand-accent' : ''}`} />
         </Listbox.Button>
         <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
-          <Listbox.Options className="absolute z-10 mt-1 w-full bg-[#1e1e1e] shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+          <Listbox.Options className="absolute z-10 mt-1 w-full bg-[#11181d] shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
             {options.map((option) => (
               <Listbox.Option key={option.value} value={option.value} className={({ active }) => `cursor-pointer select-none relative py-2 pl-10 pr-4 ${active ? 'bg-brand-accent text-brand-darkest' : 'text-brand-light'}`}>
                 {({ selected }) => (

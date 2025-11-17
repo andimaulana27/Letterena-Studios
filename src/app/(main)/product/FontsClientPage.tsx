@@ -56,8 +56,9 @@ const SkeletonList = () => (
 
 export default function FontsClientPage({ initialFonts, initialTotalPages }: FontsClientPageProps) {
   const searchParams = useSearchParams();
-  const [fonts, setFonts] = useState<FormattedFont[]>(initialFonts);
-  const [totalPages, setTotalPages] = useState(initialTotalPages);
+  // Perbaikan 1: Pastikan default state adalah array kosong jika initialFonts undefined
+  const [fonts, setFonts] = useState<FormattedFont[]>(initialFonts || []);
+  const [totalPages, setTotalPages] = useState(initialTotalPages || 0);
   const [loading, setLoading] = useState(false);
 
   const layout = searchParams.get('layout') || 'grid';
@@ -65,19 +66,26 @@ export default function FontsClientPage({ initialFonts, initialTotalPages }: Fon
   const [previewText, setPreviewText] = useState('');
 
   useEffect(() => {
-    if (initialFonts.length === 0) {
+    // Hanya fetch jika initialFonts kosong DAN kita tidak sedang loading
+    if ((!initialFonts || initialFonts.length === 0) && !loading) {
       setLoading(true);
       const params = new URLSearchParams(searchParams.toString());
       
       fetch(`/api/fonts?${params.toString()}`)
         .then(res => res.json())
         .then(data => {
-          setFonts(data.fonts);
-          setTotalPages(data.totalPages);
+          // Perbaikan 2: Handle jika API mengembalikan error atau data.fonts null
+          // Gunakan fallback ke array kosong []
+          setFonts(Array.isArray(data.fonts) ? data.fonts : []);
+          setTotalPages(data.totalPages || 0);
         })
-        .catch(console.error)
+        .catch(err => {
+            console.error("Failed to load fonts:", err);
+            setFonts([]); // Set kosong jika error agar tidak crash
+        })
         .finally(() => setLoading(false));
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams, initialFonts]);
 
   const currentPage = Number(searchParams.get('page')) || 1;
@@ -117,36 +125,39 @@ export default function FontsClientPage({ initialFonts, initialTotalPages }: Fon
 
         <section className="container mx-auto px-6 pt-8 pb-24 min-h-[50vh]">
             {loading ? (
-            isListLayout ? <SkeletonList /> : <SkeletonGrid />
-            ) : fonts.length > 0 ? (
-            <>
-                {isListLayout ? (
-                    <div className="flex flex-col">
-                        {fonts.map((font) => (
-                            <FontListCard 
-                                key={font.id} 
-                                font={font} 
-                                previewText={previewText}
-                                fontSize={fontSize}
-                            />
-                        ))}
-                    </div>
-                ) : (
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                        {fonts.map((font) => (
-                            <ProductCard key={font.id} font={font} />
-                        ))}
-                    </div>
-                )}
-                
-                {totalPages > 1 && (
-                <Pagination currentPage={currentPage} totalPages={totalPages} />
-                )}
-            </>
+                isListLayout ? <SkeletonList /> : <SkeletonGrid />
             ) : (
-            <p className="text-center col-span-full py-16 text-brand-light-muted">
-                No fonts found matching your criteria.
-            </p>
+                /* Perbaikan 3: Gunakan Optional Chaining (?.) untuk mencegah crash */
+                fonts?.length > 0 ? (
+                    <>
+                        {isListLayout ? (
+                            <div className="flex flex-col">
+                                {fonts.map((font) => (
+                                    <FontListCard 
+                                        key={font.id} 
+                                        font={font} 
+                                        previewText={previewText}
+                                        fontSize={fontSize}
+                                    />
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                                {fonts.map((font) => (
+                                    <ProductCard key={font.id} font={font} />
+                                ))}
+                            </div>
+                        )}
+                        
+                        {totalPages > 1 && (
+                        <Pagination currentPage={currentPage} totalPages={totalPages} />
+                        )}
+                    </>
+                ) : (
+                    <p className="text-center col-span-full py-16 text-brand-light-muted">
+                        No fonts found matching your criteria.
+                    </p>
+                )
             )}
         </section>
     </>

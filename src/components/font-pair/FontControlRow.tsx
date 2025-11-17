@@ -83,7 +83,7 @@ const FontSelectorDropdown = ({ fonts, selectedFont, onSelect, placeholder }: {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className="absolute top-full mt-2 w-full bg-[#1e1e1e] border border-white/20 rounded-md shadow-lg z-20">
+        <div className="absolute top-full mt-2 w-full bg-[#11181d] border border-white/20 rounded-md shadow-lg z-20">
           <div className="p-2 border-b border-white/20">
             <div className="relative">
               <Search size={18} className="absolute left-3 top-1/2 -translate-y-1/2 text-brand-light-muted" />
@@ -121,7 +121,7 @@ const StyleSelectorDropdown = ({ styles, selectedStyle, onSelect }: {
             </span>
           </Listbox.Button>
           <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#1e1e1e] py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-10">
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#11181d] py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-10">
               {styles.map((style) => (
                 <Listbox.Option
                   key={style.value}

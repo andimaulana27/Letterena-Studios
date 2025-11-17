@@ -59,7 +59,7 @@ export default function FilterDropdown({ paramName, options, label }: FilterDrop
             leaveTo="transform opacity-0 scale-95"
           >
             {/* --- PERUBAHAN DI SINI: Mengubah posisi dropdown dari kanan ke kiri --- */}
-            <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-[#1e1e1e] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-[#11181d] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
               <div className="py-1">
                 {options.map((option) => (
                   <Menu.Item key={option}>

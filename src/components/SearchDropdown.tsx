@@ -77,7 +77,7 @@ const SearchDropdown = ({ isOpen, onClose, featuredFonts, latestBundles }: Searc
       {/* Panel konten yang sebenarnya */}
       <div
         ref={contentRef}
-        className="relative w-full max-w-xl mx-auto bg-[#1e1e1e] text-brand-light rounded-lg shadow-2xl border border-brand-gray-light p-6
+        className="relative w-full max-w-xl mx-auto bg-[#11181d] text-brand-light rounded-lg shadow-2xl border border-brand-gray-light p-6
                    md:w-full md:max-w-none"
       >
         <div className="relative flex items-center">

@@ -90,7 +90,7 @@ const BlogMegaMenu = async () => {
   };
   
   return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 w-screen bg-[#1e1e1e] shadow-2xl opacity-0 invisible transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-40">
+    <div className="absolute top-full left-1/2 -translate-x-1/2 w-screen bg-[#11181d] shadow-2xl opacity-100 invisible transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-40">
       <div className="container mx-auto px-6 py-12 grid grid-cols-12 gap-x-8">
         
         <div className="col-span-3">

@@ -36,7 +36,7 @@ const MegaMenu = async () => {
   const DiscountLabel = ({ discount }: { discount: string }) => ( <div className="absolute top-2 left-2 bg-brand-secondary-red text-white text-[10px] font-bold px-2 py-1 rounded-full flex items-center gap-0.5 z-10"> <Percent size={12} /> <span>{discount}</span> </div> );
 
   return (
-    <div className="absolute top-full left-1/2 -translate-x-1/2 w-screen bg-[#1e1e1e] shadow-2xl opacity-0 invisible transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-40">
+    <div className="absolute top-full left-1/2 -translate-x-1/2 w-screen bg-[#11181d] shadow-2xl opacity-0 invisible transform -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-40">
       <div className="container mx-auto px-6 py-12 grid grid-cols-12 gap-x-8">
         <div className="col-span-3">
           <h3 className="text-xs font-medium text-brand-light-muted tracking-widest mb-6">CATEGORIES</h3>

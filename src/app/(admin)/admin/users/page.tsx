@@ -173,7 +173,7 @@ export default function ManageUsersPage() {
                                                 <ChevronDown className="h-4 w-4 text-gray-400" />
                                             </Menu.Button>
                                             <Transition as={Fragment} enter="transition ease-out duration-100" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="transition ease-in duration-75" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
-                                                <Menu.Items className="absolute left-0 z-10 mt-2 w-40 origin-top-left rounded-md bg-[#1e1e1e] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                <Menu.Items className="absolute left-0 z-10 mt-2 w-40 origin-top-left rounded-md bg-[#11181d] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                                                     {/* --- PERUBAHAN: Tambahkan opsi peran baru --- */}
                                                     <div className="py-1">
                                                         <Menu.Item><button onClick={() => handleRoleChange(user.id, 'user')} className="block w-full text-left px-4 py-2 text-sm text-brand-light hover:bg-white/10">Set as User</button></Menu.Item>

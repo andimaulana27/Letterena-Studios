@@ -22,7 +22,7 @@ export default async function MainLayout({
   
   // --- PERUBAHAN DI SINI ---
   // Nama cookie disesuaikan menjadi 'letterena_cookie_consent'
-  const consentCookie = cookieStore.get('letterena_cookie_consent');
+  const consentCookie = cookieStore.get('letterena_studios_cookie_consent');
   // --- AKHIR PERUBAHAN ---
   
   const hasConsent = consentCookie?.value === 'accepted';

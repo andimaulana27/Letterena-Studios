@@ -7,7 +7,9 @@ import { Database } from '@/lib/database.types';
 export const revalidate = 3600; // Update sitemap setiap jam
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.timelesstype.co';
+  // --- PERBAIKAN: Mengubah fallback URL ke letterena.com ---
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://letterena.com'; 
+  // --- AKHIR PERBAIKAN ---
 
   // Inisialisasi Supabase client khusus untuk server
   const cookieStore = cookies();
